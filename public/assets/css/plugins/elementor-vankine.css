@@ -1,0 +1,11 @@
+#elementor-panel-category-100 .elementor-responsive-panel, #elementor-panel-category-101 .elementor-responsive-panel, #elementor-panel-category-102 .elementor-responsive-panel, #elementor-panel-category-103 .elementor-responsive-panel, #elementor-panel-category-104 .elementor-responsive-panel {
+  gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(min(80px, 50% - 5px), 1fr));
+}
+#elementor-panel-category-100 .elementor-element, #elementor-panel-category-101 .elementor-element, #elementor-panel-category-102 .elementor-element, #elementor-panel-category-103 .elementor-element, #elementor-panel-category-104 .elementor-element {
+  padding: 5px;
+}
+#elementor-panel-category-100 .elementor-element .icon-vankine-icon, #elementor-panel-category-101 .elementor-element .icon-vankine-icon, #elementor-panel-category-102 .elementor-element .icon-vankine-icon, #elementor-panel-category-103 .elementor-element .icon-vankine-icon, #elementor-panel-category-104 .elementor-element .icon-vankine-icon {
+  color: #008BF9;
+  font-size: 20px;
+}/*# sourceMappingURL=elementor-vankine.css.map */

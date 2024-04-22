@@ -1,0 +1,16 @@
+#elementor-panel-category-100 , #elementor-panel-category-101 , #elementor-panel-category-102 , #elementor-panel-category-103 , #elementor-panel-category-104 {
+   .elementor-responsive-panel{
+        gap: 5px;
+        grid-template-columns: repeat(auto-fill,minmax(min(80px,50% - 5px),1fr));
+    }
+    .elementor-element{
+        padding: 5px;
+        .icon-vankine-icon{
+            color: #008BF9;
+            font-size: 20px;
+        }
+        
+     }
+}
+
+  

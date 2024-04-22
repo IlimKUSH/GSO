@@ -1,0 +1,55 @@
+/*COMPONENTS -> TABS*/
+ // nav-tabs
+ body{
+    .nav-tabs{
+        position: relative;
+        margin: 0px;
+        padding: 0px!important;
+        border: unset;
+        li{
+            display: inline-block;
+            padding: 0px 5px;
+            .nav-link {
+                position: relative;  
+                display: block;
+                border: 0px;
+                font-family: var(--font-family-main);
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                align-items: center;
+                color: var(--heading-color-one); 
+                border-radius: 7px;
+                background: var(--color-set-one-bg-1);
+                &.active , &:hover{
+                    background: var(--color-set-one-1);
+                    color: var(--color-white);
+                }
+            }
+            &:last-child{
+                padding-right: 0px;
+            }
+            &:first-child{
+                padding-left: 0px;
+            }
+        }
+    }
+    
+}
+ // custom-tabs
+.custom_tabs{
+    .tab-pane {
+        transform: translateY(120px);
+        &.active {
+            display: block;
+            animation: fadeIn ease .9s;
+            -webkit-animation: fadeIn ease .9s;
+            -moz-animation: fadeIn ease .9s;
+             -o-animation: fadeIn ease .9s;
+            -ms-animation: fadeIn ease .9s;
+            transform: translateY(0px);
+        }
+    }
+}
+  
+ 
