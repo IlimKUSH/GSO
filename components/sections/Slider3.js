@@ -2,6 +2,8 @@ import Link from "next/link"
 
 import { Autoplay, Navigation, Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
+import useAxios from "@/hooks/useAxios";
+import {useLocale} from "next-intl";
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -26,73 +28,46 @@ const swiperOptions = {
     },
 }
 export default function Slider3() {
+    const locale = useLocale()
+    const {response, loading, update} = useAxios({
+        method: "get",
+        url: "/api/slider/",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: process.env.NEXT_PUBLIC_ACCESS_TOKEN
+        }
+    })
+    const data = response?.results
+
     return (
         <>
             <section className="slider style_three">
                 <Swiper {...swiperOptions} className="owl_nav_block owl_dots_none theme_carousel">
-                    <SwiperSlide className="slide-item-content">
-                        <div className="image-layer" style={{ backgroundImage: 'url(assets/images/slider/banner-3-1.jpg)' }} />
-                        <div className="slide-item content_left">
-                            <div className="auto-container">
-                                <div className="row align-items-center">
-                                    <div className="col-md-12 text-center">
-                                        <div className="slider_content">
-                                            <h6 className="animate_up">
-                                                Better Insurance
-                                            </h6>
-                                            <h1 className="animate_left"> For Better People </h1>
-                                            <div className="button_all animate_down">
-                                                <Link href="#" className="theme_btn color_white  animated">Read
-                                                    More</Link>
+                    {data?.map((slide) => (
+                        <SwiperSlide key={slide.id} className="slide-item-content">
+                            <div className="image-layer" style={{ backgroundImage: `url(${slide.background_photo})` }} />
+                            <div className="slide-item content_left">
+                                <div className="auto-container">
+                                    <div className="row align-items-center">
+                                        <div className="col-md-12 text-center">
+                                            <div className="slider_content">
+                                                <h6 className="animate_up">
+                                                    {slide?.[`title_${locale}`]}
+                                                </h6>
+                                                <h1 className="animate_left">
+                                                    {slide?.[`description_${locale}`]}
+                                                </h1>
+                                                <div className="button_all animate_down">
+                                                    <Link href="#" className="theme_btn color_white  animated">Read
+                                                        More</Link>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="slide-item-content">
-                        <div className="image-layer" style={{ backgroundImage: 'url(assets/images/slider/banner-3-2.jpg)' }} />
-                        <div className="slide-item content_left">
-                            <div className="auto-container">
-                                <div className="row align-items-center">
-                                    <div className="col-md-12 text-center">
-                                        <div className="slider_content">
-                                            <h6 className="animate_up">
-                                                Better Insurance
-                                            </h6>
-                                            <h1 className="animate_left">Life Insurance </h1>
-                                            <div className="button_all animate_down">
-                                                <Link href="#" className="theme_btn color_white  animated">Read
-                                                    More</Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="slide-item-content">
-                        <div className="image-layer" style={{ backgroundImage: 'url(assets/images/slider/banner-3-3.jpg)' }} />
-                        <div className="slide-item content_left">
-                            <div className="auto-container">
-                                <div className="row align-items-center">
-                                    <div className="col-md-12 text-center">
-                                        <div className="slider_content">
-                                            <h6 className="animate_up">
-                                                Best For Insurance
-                                            </h6>
-                                            <h1 className="animate_left"> Financial Protection </h1>
-                                            <div className="button_all animate_down">
-                                                <Link href="#" className="theme_btn color_white  animated">Read
-                                                    More</Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </SwiperSlide>
+                        </SwiperSlide>
+                    ))}
 
                     <div className="owl-nav">
                         <button type="button" role="presentation" className="owl-prev">

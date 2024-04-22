@@ -1,7 +1,18 @@
 import Link from "next/link"
+import useAxios from "@/hooks/useAxios";
 
 
 export default function Blog3() {
+    const {response, loading, update} = useAxios({
+        method: "get",
+        url: "/api/blogPost/",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: process.env.NEXT_PUBLIC_ACCESS_TOKEN
+        }
+    })
+    const data = response?.results[0]
+
     return (
         <>
             <section className="news-section">

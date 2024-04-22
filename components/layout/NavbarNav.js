@@ -8,42 +8,44 @@ export default function NavbarNav() {
         <>
             <ul className="navbar_nav">
                 <li className="menu-item nav-item menu-item-has-children dropdown mennucolumn_full-six">
-                    <Link href="/" className="nav_link">
-                        <span className="text-link"> {t("About us")} </span>
+                    <Link href="#about" className="nav_link">
+                        <span className="text-link">
+                            {t("About us")}
+                        </span>
                     </Link>
                 </li>
                 <li className="menu-item  menu-item-has-children dropdown  mennucolumn_ nav-item">
-                    <Link href="#" className="nav_link">
+                    <Link href="#offers" className="nav_link">
                         <span className="text-link">
-                            Предложения
+                            {t("Offers")}
                         </span>
                     </Link>
                 </li>
                 <li className="menu-item menu-item-has-children dropdown  nav-item">
-                    <Link href="#" className="nav_link">
+                    <Link href="#services" className="nav_link">
                         <span className="text-link">
-                            Сервисы
+                            {t("Services")}
                         </span>
                     </Link>
                 </li>
                 <li className="menu-item  menu-item-has-children dropdown  mennucolumn_  nav-item">
-                    <Link href="#" className="nav_link">
+                    <Link href="#process" className="nav_link">
                         <span className="text-link">
-                            Портфолио
+                            {t("Working process")}
                         </span>
                     </Link>
                 </li>
                 <li className="menu-item  menu-item-has-children dropdown  mennucolumn_two   nav-item">
-                    <Link href="/blog" className="nav_link">
+                    <Link href="#clients" className="nav_link">
                         <span className="text-link">
-                            Наши клиенты
+                            {t("Our clients")}
                         </span>
                     </Link>
                 </li>
                 <li className="menu-item  menu-item-has-children dropdown  mennucolumn_  nav-item">
-                    <Link href="/shop" className="nav_link">
+                    <Link href="#news" className="nav_link">
                         <span className="text-link">
-                            Новости
+                            {t("News")}
                         </span>
                     </Link>
                 </li>

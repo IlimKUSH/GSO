@@ -1,6 +1,8 @@
 
 import { Autoplay, Navigation, Pagination } from "swiper"
 import ClientSlider from "../slider/ClientSlider"
+import useAxios from "@/hooks/useAxios";
+import {useLocale} from "next-intl";
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -52,6 +54,18 @@ const swiperOptions = {
     }
 }
 export default function Client2() {
+    const locale = useLocale()
+
+    const {response, loading, update} = useAxios({
+        method: "get",
+        url: "/api/client/",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: process.env.NEXT_PUBLIC_ACCESS_TOKEN
+        }
+    })
+    const data = response?.results[0]
+
     return (
         <>
             <section className="client-section">
@@ -62,9 +76,9 @@ export default function Client2() {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="section_title text-center type_four">
-                                <h4 className="sm_title"> Popular Global Clients</h4>
+                                <h4 className="sm_title"> {data?.["title_"] + locale}</h4>
                                 <div className="title_whole">
-                                    <h2 className="title"> We’ve 1520+Global Premium Clients</h2>
+                                    <h2 className="title"> {data?.["subtitle"] + locale}</h2>
                                 </div>
                                 {/*-============spacing==========-*/}
                                 <div className="pd_bottom_40" />

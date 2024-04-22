@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import Sidebar from './Sidebar'
-export default function MobileMenu({ handleMobileMenu, isMobileMenu }) {
+import {useTranslations} from "next-intl";
+import LocaleSwitcher from "@/components/elements/LocaleSwitcher";
+export default function MobileMenu({ data, handleMobileMenu, isMobileMenu }) {
+    const t = useTranslations()
 
     return (
         <>
@@ -9,33 +12,30 @@ export default function MobileMenu({ handleMobileMenu, isMobileMenu }) {
                     <div className="menu-backdrop" onClick={handleMobileMenu} />
                     <nav className="menu-box scrollbarcolor">
                         <div className="close-btn" onClick={handleMobileMenu}>
-                            <i className="fi-rr-cross" />
+                            <i className="fi-rr-cross"/>
+                        </div>
+                        <div className="button theme_btn">
+                            <LocaleSwitcher/>
                         </div>
                         <form role="search" method="get" action="#">
-                            <input type="search" className="search" placeholder="Search..." name="s" title="Search" />
+                            <input type="search" className="search" placeholder={t("Search")} name="s" title="Search"/>
                             <button type="submit" className="sch_btn">
-                                <i className="fa fa-search" />
+                                <i className="fa fa-search"/>
                             </button>
                         </form>
                         <div className="menu-outer">
                             <div className="navigation_menu">
-                                <Sidebar />
+                                <Sidebar/>
                             </div>
                         </div>
                         <div className="mobile-header-info-wrap">
                             <div className="single-mobile-header-info">
-                                <Link href="tel:9806071234" className="cnt">
-                                    <i className="fi-rs-headphones" />9806071234 </Link>
+                                <Link href={`tel:${data?.call}`} className="cnt">
+                                    <i className="fi-rs-headphones"/>{data?.call} </Link>
                             </div>
                             <div className="single-mobile-header-info cont_over">
                                 <Link href="mailto:sendmail@example.com" className="cnt">
-                                    <i className="fi-rs-envelope" />sendmail@example.com </Link>
-                            </div>
-                            <div className="single-mobile-header-info">
-                                <Link href="#" className="theme_btn tp_one">Contact</Link>
-                            </div>
-                            <div className="single-mobile-header-info">
-                                <Link href="#" className="theme_btn">Service</Link>
+                                    <i className="fi-rs-envelope"/>{data?.email} </Link>
                             </div>
                         </div>
                     </nav>

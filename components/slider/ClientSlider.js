@@ -1,5 +1,6 @@
 import { Autoplay, Navigation, Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
+import useAxios from "@/hooks/useAxios";
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -51,36 +52,24 @@ const swiperOptions = {
     }
 }
 export default function ClientSlider() {
+    const {response, loading, update} = useAxios({
+        method: "get",
+        url: "/api/client/",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: process.env.NEXT_PUBLIC_ACCESS_TOKEN
+        }
+    })
+    const data = response?.results[0]
+
     return (
         <>
             <Swiper {...swiperOptions} className="theme_carousel ">
-                <SwiperSlide className="image">
-                    <img src="/assets/images/client-1.png" className="img-fluid w_auto m-auto" alt="img" />
-                </SwiperSlide>
-                <SwiperSlide className="image">
-                    <img src="/assets/images/client-2.png" className="img-fluid w_auto m-auto" alt="img" />
-                </SwiperSlide>
-                <SwiperSlide className="image">
-                    <img src="/assets/images/client-3.png" className="img-fluid w_auto m-auto" alt="img" />
-                </SwiperSlide>
-                <SwiperSlide className="image">
-                    <img src="/assets/images/client-4.png" className="img-fluid w_auto m-auto" alt="img" />
-                </SwiperSlide>
-                <SwiperSlide className="image">
-                    <img src="/assets/images/client-5.png" className="img-fluid w_auto m-auto" alt="img" />
-                </SwiperSlide>
-                <SwiperSlide className="image">
-                    <img src="/assets/images/client-6.png" className="img-fluid w_auto m-auto" alt="img" />
-                </SwiperSlide>
-                <SwiperSlide className="image">
-                    <img src="/assets/images/client-4.png" className="img-fluid w_auto m-auto" alt="img" />
-                </SwiperSlide>
-                <SwiperSlide className="image">
-                    <img src="/assets/images/client-5.png" className="img-fluid w_auto m-auto" alt="img" />
-                </SwiperSlide>
-                <SwiperSlide className="image">
-                    <img src="/assets/images/client-6.png" className="img-fluid w_auto m-auto" alt="img" />
-                </SwiperSlide>
+                {data?.client_list?.map((client) => (
+                    <SwiperSlide key={client.id} className="image">
+                        <img src={process.env.NEXT_PUBLIC_BACKEND_URL + client.icon} className="img-fluid w_auto m-auto" alt="img" />
+                    </SwiperSlide>
+                ))}
             </Swiper>
         </>
     )

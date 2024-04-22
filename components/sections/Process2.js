@@ -1,7 +1,19 @@
 import Link from "next/link"
-
+import useAxios from "@/hooks/useAxios";
+import {useLocale} from "next-intl";
 
 export default function Process2() {
+    const locale = useLocale()
+    const {response, loading, update} = useAxios({
+        method: "get",
+        url: "/api/process/",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: process.env.NEXT_PUBLIC_ACCESS_TOKEN
+        }
+    })
+    const data = response?.results[0]
+
     return (
         <>
             <section className="process-section">
@@ -12,9 +24,9 @@ export default function Process2() {
                     <div className="row">
                         <div className="col-lg-7 m-auto">
                             <div className="section_title text-center type_four">
-                                <h4 className="sm_title"> Working Process</h4>
+                                <h4 className="sm_title"> {data?.["main_title_" + locale]}</h4>
                                 <div className="title_whole">
-                                    <h2 className="title"> Easy Way to Get Our Popular Insurance Services</h2>
+                                    <h2 className="title"> {data?.["subtitle_" + locale]}</h2>
                                 </div>
                             </div>
                         </div>
@@ -23,94 +35,30 @@ export default function Process2() {
                     <div className="pd_bottom_40" />
                     {/*-============spacing==========-*/}
                     <div className="row">
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                            <div className="process_box type_two type_three color_two hover_1_get">
-                                <div className="image_box hover_1">
-                                    <img src="/assets/images/process/pro-h4-1-min.jpg" alt="img" className="img-fluid" />
-                                    <div className="oh ho_1" />
-                                    <div className="oh ho_2" />
-                                    <div className="oh ho_3" />
-                                    <div className="oh ho_4" />
-                                    <div className="icon trans" />
-                                </div>
-                                <div className="content_no">
-                                    <div className="con_top">
-                                        <p className="step">Step 01</p>
-                                        <div className="title_22">
-                                            <Link href="#">
-                                                Meet Our Agent </Link></div>
+                        {data?.process_list?.map((listItem) => (
+                            <div key={listItem.id} className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div className="process_box type_two type_three color_two hover_1_get">
+                                    <div className="image_box hover_1">
+                                        <img src={process.env.NEXT_PUBLIC_BACKEND_URL + listItem.photo} alt="img"
+                                             className="img-fluid"/>
+                                        <div className="oh ho_1"/>
+                                        <div className="oh ho_2"/>
+                                        <div className="oh ho_3"/>
+                                        <div className="oh ho_4"/>
+                                        <div className="icon trans"/>
                                     </div>
-                                    <p>Sed ut perspiciatis undey
-                                        este natus volutate</p>
+                                    <div className="content_no">
+                                        <div className="con_top">
+                                            <p className="step">{listItem.process}</p>
+                                            <div className="title_22">
+                                                <Link href="#">
+                                                    {listItem?.["title_" + locale]} </Link></div>
+                                        </div>
+                                        <p>{listItem?.["description_" + locale]}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                            <div className="process_box type_two type_three color_two hover_1_get">
-                                <div className="image_box hover_1">
-                                    <img src="/assets/images/process/pro-h4-2-min.jpg" alt="img" className="img-fluid" />
-                                    <div className="oh ho_1" />
-                                    <div className="oh ho_2" />
-                                    <div className="oh ho_3" />
-                                    <div className="oh ho_4" />
-                                    <div className="icon trans" />
-                                </div>
-                                <div className="content_no">
-                                    <div className="con_top">
-                                        <p className="step">Step 02</p>
-                                        <div className="title_22">
-                                            <Link href="#">
-                                                Select Insurance </Link></div>
-                                    </div>
-                                    <p>Sed ut perspiciatis undey
-                                        este natus volutate</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                            <div className="process_box type_two type_three color_two hover_1_get">
-                                <div className="image_box hover_1">
-                                    <img src="/assets/images/process/pro-h4-3-min.jpg" alt="img" className="img-fluid" />
-                                    <div className="oh ho_1" />
-                                    <div className="oh ho_2" />
-                                    <div className="oh ho_3" />
-                                    <div className="oh ho_4" />
-                                    <div className="icon trans" />
-                                </div>
-                                <div className="content_no">
-                                    <div className="con_top">
-                                        <p className="step">Step 03</p>
-                                        <div className="title_22">
-                                            <Link href="#">
-                                                Create Account </Link></div>
-                                    </div>
-                                    <p>Sed ut perspiciatis undey
-                                        este natus volutate</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                            <div className="process_box type_two type_three color_two hover_1_get">
-                                <div className="image_box hover_1">
-                                    <img src="/assets/images/process/pro-h4-4-min.jpg" alt="img" className="img-fluid" />
-                                    <div className="oh ho_1" />
-                                    <div className="oh ho_2" />
-                                    <div className="oh ho_3" />
-                                    <div className="oh ho_4" />
-                                    <div className="icon trans" />
-                                </div>
-                                <div className="content_no">
-                                    <div className="con_top">
-                                        <p className="step">Step 04</p>
-                                        <div className="title_22">
-                                            <Link href="#">
-                                                Get Insurance </Link></div>
-                                    </div>
-                                    <p>Sed ut perspiciatis undey
-                                        este natus volutate</p>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
                 {/*-============spacing==========-*/}

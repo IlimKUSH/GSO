@@ -28,6 +28,7 @@ function MyApp({ Component, pageProps }) {
         <NextIntlClientProvider
             locale={router.locale}
             messages={pageProps.messages}
+            timeZone="Europe/Vienna"
         >
             <Component {...pageProps} />
         </NextIntlClientProvider>

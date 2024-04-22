@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://10.118.210.100:8989/api/';
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 export default function useAxios(axiosParams) {
     const [response, setResponse] = useState(null);
     const [error, setError] = useState(null);

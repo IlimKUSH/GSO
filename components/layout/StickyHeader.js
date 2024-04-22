@@ -3,21 +3,12 @@ import NavbarNav from "./NavbarNav"
 import useAxios from "@/hooks/useAxios";
 import LocaleSwitcher from "@/components/elements/LocaleSwitcher";
 
-export default function StickyHeader({ handleSearch, handleOptionalPanel, handleMobileMenu }) {
-    const {response, loading, update} = useAxios({
-        method: "get",
-        url: "header/",
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzNzgzNjYxLCJpYXQiOjE3MTM3ODMzNjEsImp0aSI6IjJkZDQyMDIwMTlmODQ0N2M5M2M3ZGM1Y2RiYjM1NTk5IiwidXNlcl9pZCI6MX0.vl5C3jwSJI4syUrVniDmjFC3dN22dCFX-aq6XNZZB_w"
-        }
-    })
+export default function StickyHeader({ data, handleSearch, handleOptionalPanel, handleMobileMenu }) {
 
-    console.log(response)
 
     return (
         <>
-            <div className={`sticky_header_area sticky_header_content`}>
+            <div className="sticky_header_area sticky_header_content">
                 <header className="header-area header-style-1 htype_three">
                     <div className="main_header_content default_header">
                         <div className="large-container">
@@ -25,7 +16,7 @@ export default function StickyHeader({ handleSearch, handleOptionalPanel, handle
                                 <div className="col-xl-2 col-lg-12 col-md-5 col-sm-5 col-xs-5">
                                     <div className="logobox">
                                         <Link href="/" className="logo navbar-brand">
-                                            <img src={response?.results[0].logo} alt="Vankine" className="logo_default" />
+                                            <img src={data?.logo} alt="Vankine" className="logo_default" />
                                         </Link>
                                     </div>
                                 </div>
