@@ -16,7 +16,7 @@ export default function Process2() {
 
     return (
         <>
-            <section className="process-section">
+            <section id="process" className="process-section">
                 {/*-============spacing==========-*/}
                 <div className="pd_top_90" />
                 {/*-============spacing==========-*/}

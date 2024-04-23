@@ -14,7 +14,7 @@ export default function Home3() {
 
     return (
         <>
-            <Layout headerStyle={3} footerStyle={3} pageCls="s_color_three pd_left_100">
+            <Layout pageCls="s_color_three pd_left_100">
                 <Slider3 />
                 <About3 />
                 <Offer1 />

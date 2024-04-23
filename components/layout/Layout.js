@@ -13,7 +13,7 @@ import Footer5 from "./footer/Footer5"
 import Footer6 from "./footer/Footer6"
 import useAxios from "@/hooks/useAxios";
 
-export default function Layout({ headerStyle, footerStyle, pageCls, breadcrumbTitle, children }) {
+export default function Layout({ pageCls, breadcrumbTitle, children }) {
     // Search
     const [isSearch, setSearch] = useState(false)
     const handleSearch = () => setSearch(!isSearch)
@@ -58,7 +58,7 @@ export default function Layout({ headerStyle, footerStyle, pageCls, breadcrumbTi
                     <div id="content" className="site-content">
                         {children}
                     </div>
-                    <Footer3 />
+                    <Footer3 data={response?.results[0]} />
                 </div>
                 <MobileMenu data={response?.results[0]} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} />
                 <SearchPopup isSearch={isSearch} handleSearch={handleSearch} />

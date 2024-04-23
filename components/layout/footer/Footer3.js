@@ -1,6 +1,10 @@
 import Link from "next/link"
+import {useLocale, useTranslations} from "next-intl";
 
-export default function Footer3({ }) {
+export default function Footer3({ data }) {
+    const t = useTranslations()
+    const locale = useLocale()
+
     return (
         <>
             <footer className="footer style_one style_three bg_op_4" style={{ backgroundImage: 'url(assets/images/Map.png)' }}>
@@ -15,7 +19,7 @@ export default function Footer3({ }) {
                                 <div className="footer_widgets_box pd_bottom_30">
                                     <div className="logo_box">
                                         <Link href="#" className="logo navbar-brand">
-                                            <img src="/assets/images/footer-logo-three.png" alt="Vankine" className="logo_default" />
+                                            <img src="/assets/images/footer-logo.svg" alt="Vankine" className="logo_default" />
                                         </Link>
                                     </div>
                                     {/*-============spacing==========-*/}
@@ -72,7 +76,7 @@ export default function Footer3({ }) {
                                     <div className="col-lg-8 m-auto">
                                         <div className="footer_widgets_box mid_border pd_bottom_30 pd_top_10">
                                             <div className="fwidget_title">
-                                                <h2 className="title color_white"> Services </h2>
+                                                <h2 className="title color_white"> {t("Links")} </h2>
                                                 {/*-============spacing==========-*/}
                                                 <div className="pd_bottom_35" />
                                                 {/*-============spacing==========-*/}
@@ -251,11 +255,8 @@ export default function Footer3({ }) {
                                     <ul className="list_box linline">
                                         <li>
                                             <div className="d-flex align-items-center">
-                                                <div className="icon trans">
-                                                    <i className=" fi-rr-clock" />
-                                                </div>
                                                 <Link className="links color_white" href="#">
-                                                    Working Hours : Sun-monday, 09am-5pm
+                                                    {data?.["location_" + locale]}
                                                 </Link>
                                             </div>
                                         </li>

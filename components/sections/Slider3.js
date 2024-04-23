@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Autoplay, Navigation, Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 import useAxios from "@/hooks/useAxios";
-import {useLocale} from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -28,6 +28,7 @@ const swiperOptions = {
     },
 }
 export default function Slider3() {
+    const t = useTranslations()
     const locale = useLocale()
     const {response, loading, update} = useAxios({
         method: "get",
@@ -58,8 +59,9 @@ export default function Slider3() {
                                                     {slide?.[`description_${locale}`]}
                                                 </h1>
                                                 <div className="button_all animate_down">
-                                                    <Link href="#" className="theme_btn color_white  animated">Read
-                                                        More</Link>
+                                                    <Link href="#" className="theme_btn color_white  animated">
+                                                        {t("Read more")}
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </div>

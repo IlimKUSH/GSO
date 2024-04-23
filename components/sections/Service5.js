@@ -16,7 +16,7 @@ export default function Service5() {
 
     return (
         <>
-            <section className="service-section position-relative bg_op_1" style={{ backgroundImage: `url(${data?.background_photo})` }}>
+            <section id="services" className="service-section position-relative bg_op_1" style={{ backgroundImage: `url(${data?.background_photo})` }}>
                 <div className="background_overlay bg_10 z_0" />
                 {/*-============spacing==========-*/}
                 <div className="pd_top_80" />

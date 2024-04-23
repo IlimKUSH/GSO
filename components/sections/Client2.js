@@ -68,7 +68,7 @@ export default function Client2() {
 
     return (
         <>
-            <section className="client-section">
+            <section id="clients" className="client-section">
                 {/*-============spacing==========-*/}
                 <div className="pd_top_90" />
                 {/*-============spacing==========-*/}
@@ -76,9 +76,9 @@ export default function Client2() {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="section_title text-center type_four">
-                                <h4 className="sm_title"> {data?.["title_"] + locale}</h4>
+                                <h4 className="sm_title"> {data?.["title_" + locale]}</h4>
                                 <div className="title_whole">
-                                    <h2 className="title"> {data?.["subtitle"] + locale}</h2>
+                                    <h2 className="title"> {data?.["subtitle_" + locale]}</h2>
                                 </div>
                                 {/*-============spacing==========-*/}
                                 <div className="pd_bottom_40" />

@@ -5,7 +5,9 @@ export default function Blog7() {
     return (
         <>
             <section className="container">
-                <div className="call_to_action style_two bg_op_1 position-relative z_99 mr_bottom_minus_200" style={{ backgroundImage: 'url(assets/images/footer/footer-3-bg.jpg)' }}>
+                <div className="call_to_action style_two bg_op_1 position-relative z_99 mr_bottom_minus_200"
+                     // style={{ backgroundImage: 'url(assets/images/footer/footer-3-bg.jpg)' }}
+                >
                     <div className="row align-items-center">
                         <div className="col-lg-6">
                             <div className="section_title type_one">
