@@ -39,7 +39,7 @@ export default function Process2() {
                             <div key={listItem.id} className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                                 <div className="process_box type_two type_three color_two hover_1_get">
                                     <div className="image_box hover_1">
-                                        <img src={process.env.NEXT_PUBLIC_BACKEND_URL + listItem.photo} alt="img"
+                                        <img src={listItem.photo} alt="img"
                                              className="img-fluid"/>
                                         <div className="oh ho_1"/>
                                         <div className="oh ho_2"/>

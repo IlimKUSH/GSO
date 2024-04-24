@@ -1,7 +1,22 @@
 import Link from "next/link"
 import VideoBox from "../elements/VideoBox"
+import {useLocale, useTranslations} from "next-intl";
+import useAxios from "@/hooks/useAxios";
 
 export default function Blog7() {
+    const t =useTranslations()
+    const locale = useLocale()
+    const {response, loading, update} = useAxios({
+        method: "get",
+        url: "/api/blogPost/",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: process.env.NEXT_PUBLIC_ACCESS_TOKEN
+        }
+    })
+    const data = response?.results[0]
+
+
     return (
         <>
             <section className="container">

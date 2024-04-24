@@ -67,7 +67,7 @@ export default function ClientSlider() {
             <Swiper {...swiperOptions} className="theme_carousel ">
                 {data?.client_list?.map((client) => (
                     <SwiperSlide key={client.id} className="image">
-                        <img src={process.env.NEXT_PUBLIC_BACKEND_URL + client.icon} className="img-fluid w_auto m-auto" alt="img" />
+                        <img src={client.icon} className="img-fluid w_auto m-auto" alt="img" />
                     </SwiperSlide>
                 ))}
             </Swiper>

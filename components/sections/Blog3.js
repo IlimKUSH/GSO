@@ -1,9 +1,10 @@
 import Link from "next/link"
 import useAxios from "@/hooks/useAxios";
-import {useLocale} from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 
 
 export default function Blog3() {
+    const t =useTranslations()
     const locale = useLocale()
     const {response, loading, update} = useAxios({
         method: "get",
@@ -38,7 +39,7 @@ export default function Blog3() {
                                 <div key={client.id} className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                                     <div
                                         className="blog_box type_two type_three type_four trans hover_1_get hover_1 color_two">
-                                        <img src={process.env.NEXT_PUBLIC_BACKEND_URL + client.featured_image} className="img-fluid" alt="blog"/>
+                                        <img src={client.featured_image} className="img-fluid" alt="blog"/>
                                         <div className="oh ho_1"/>
                                         <div className="oh ho_2"/>
                                         <div className="oh ho_3"/>
@@ -67,7 +68,7 @@ export default function Blog3() {
                                                         {client?.["author_" + locale]}
                                                     </div>
                                                     <Link href="/blog" className="rd_more">
-                                                        Read More <i className="fi-rr-arrow-small-right"/>
+                                                        {t("Read more")} <i className="fi-rr-arrow-small-right"/>
                                                     </Link>
                                                 </div>
                                             </div>

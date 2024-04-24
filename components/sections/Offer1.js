@@ -101,7 +101,7 @@ export default function Offer1() {
                                     {data?.offer_list?.map((offerItem) => (
                                         <SwiperSlide key={offerItem.id} className="process_box  type_two hover_1_get color_two">
                                             <div className="image_box hover_1">
-                                                <img src={process.env.NEXT_PUBLIC_BACKEND_URL + offerItem.background_photo} alt="service" className="img-fluid" />
+                                                <img src={offerItem.background_photo} alt="service" className="img-fluid" />
                                                 <div className="oh ho_1" />
                                                 <div className="oh ho_2" />
                                                 <div className="oh ho_3" />

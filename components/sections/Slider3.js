@@ -58,11 +58,6 @@ export default function Slider3() {
                                                 <h1 className="animate_left">
                                                     {slide?.[`description_${locale}`]}
                                                 </h1>
-                                                <div className="button_all animate_down">
-                                                    <Link href="#" className="theme_btn color_white  animated">
-                                                        {t("Read more")}
-                                                    </Link>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>

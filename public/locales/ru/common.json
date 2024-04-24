@@ -9,5 +9,13 @@
   "Search": "Поиск",
   "Learn More": "Подробнее",
   "Links": "Ссылки",
-  "Read more": "Читать больше"
+  "Read more": "Читать больше",
+  "Recent News": "Последние новости",
+  "FirstName": "Имя",
+  "LastName": "Фамилия",
+  "Email": "Email",
+  "PhoneNumber": "Номер телефона",
+  "InsuranceType": "Тип страховки",
+  "BalanceLimit": "Лимит баланса",
+  "GetAQuote": "Узнать цену"
 }

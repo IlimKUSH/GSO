@@ -8,6 +8,9 @@ export default function useAxios(axiosParams) {
     const [loading, setLoading] = useState(false);
 
     const fetchData = async (params = axiosParams) => {
+        if (!params?.url) {
+            return
+        }
         try {
             setLoading(true);
             const result = await axios.request(params);

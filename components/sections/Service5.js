@@ -66,7 +66,7 @@ export default function Service5() {
                                                 </p>
                                                 <Link href="/service" className="rd_more">
                                                     <img
-                                                        src={process.env.NEXT_PUBLIC_BACKEND_URL + serviceItem.icon}
+                                                        src={serviceItem.icon}
                                                         alt="service"/>
                                                 </Link>
                                             </div>

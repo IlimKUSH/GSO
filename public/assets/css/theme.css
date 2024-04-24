@@ -2293,7 +2293,7 @@ pre {
 .slider.style_three .slider_content h1 {
   line-height: 140px;
   font-weight: 700;
-  font-size: 120px;
+  font-size: 100px;
   color: var(--color-white);
   margin-bottom: 35px;
 }
@@ -2351,8 +2351,8 @@ pre {
 }
 .slider.style_three .owl-nav .owl-prev:hover,
 .slider.style_three .owl-nav .owl-next:hover {
-  background: var(--color-set-two-three-1);
-  border-color: var(--color-set-two-three-1);
+  background: var(--color-set-one-1);
+  border-color: var(--color-set-one-1);
 }
 .slider.style_five .slick-prev,
 .slider.style_five .slick-next {
@@ -5517,8 +5517,8 @@ body .service_post.style_one .owl-carousel .owl-dots {
   color: var(--heading-color-two) !important;
 }
 .fom_tab_box.type_three button[type=submit] {
-  background: var(--color-set-two-three-6);
-  border-color: var(--color-set-two-three-6);
+  background: var(--color-set-one-1);
+  border-color: var(--color-set-one-1);
 }
 .fom_tab_box.type_three label {
   font-weight: 600;
@@ -6515,7 +6515,7 @@ body .service_post.style_one .owl-carousel .owl-dots {
   position: absolute;
   text-align: center;
   top: -25px;
-  right: -40px;
+  right: 0px;
 }
 .image_video_box_only.type_two .image .video_box a {
   position: relative;

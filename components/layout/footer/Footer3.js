@@ -243,7 +243,7 @@ export default function Footer3({ data }) {
                                                     <img src="/assets/images/shield.svg" className="img-fluid" alt="img" />
                                                 </div>
                                                 <Link className="links color_white" href="#">
-                                                    Copyright {new Date().getFullYear()}, Vankine. All Rights Reserved
+                                                    Copyright {new Date().getFullYear()}. All Rights Reserved
                                                 </Link>
                                             </div>
                                         </li>

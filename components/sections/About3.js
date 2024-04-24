@@ -62,11 +62,6 @@ export default function About3() {
                             {/*-============spacing==========-*/}
                             <div className="pd_bottom_35" />
                             {/*-============spacing==========-*/}
-                            <div className="theme_btn_all">
-                                <Link href="#" className="theme_btn color_three big rotate">
-                                    {t("Learn More")} <span> <i className=" fi-rr-arrow-small-up" /></span>
-                                </Link>
-                            </div>
                             {/*-============spacing==========-*/}
                             <div className="pd_bottom_25" />
                             {/*-============spacing==========-*/}
