@@ -5,7 +5,7 @@ import {useLocale, useTranslations} from "next-intl";
 import useAxios from "@/hooks/useAxios";
 
 const BlogDetails = () => {
-    const t =useTranslations()
+    const t = useTranslations()
     const locale = useLocale()
     const router = useRouter()
 
@@ -38,7 +38,6 @@ const BlogDetails = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                {t("Learn More")}
                                 <div className="blog_single_content">
                                     <div className="single-thumbnail">
                                         <img src={data?.featured_image} className="img-fluid" alt="img" />
@@ -67,3 +66,20 @@ const BlogDetails = () => {
 }
 
 export default BlogDetails
+
+export async function getStaticProps(context) {
+    return {
+        props: {
+            messages: {
+                ...(await import(`public/locales/${context.locale}/common.json`)).default,
+            },
+        },
+    };
+}
+
+export function getStaticPaths(context) {
+    return {
+        paths: [],
+        fallback: "blocking",
+    };
+}
