@@ -17,7 +17,7 @@ export default function Header3({ handleSearch, handleOptionalPanel, handleMobil
                                     <div className="col-lg-3 width_50">
                                         <div className="logo_box">
                                             <Link href="/" className="logo navbar-brand">
-                                                <img src="/assets/images/Logo-green.png" alt="Vankine" className="logo_default" />
+                                                <img src="/assets/images/Logo-green.png" alt="ГСО" className="logo_default" />
                                             </Link>
                                         </div>
                                     </div>

@@ -70,9 +70,6 @@ export default function About3() {
                             <div className="image_video_box_only type_two color_two">
                                 <div className="image one">
                                     <img src={data?.photo} alt="img" className="imf-fluid" />
-                                    <div className="video_box video-inner text-center">
-                                        <VideoBox />
-                                    </div>
                                     <div className="fun_facts type_two">
                                         <h6 className="title_no_a_18">25</h6>
                                         <h6 className="title_no_a_26">Лет <br />

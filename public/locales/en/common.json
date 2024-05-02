@@ -1,21 +1,18 @@
 {
+  "Home": "Home",
   "About us": "About us",
   "Offers": "Offers",
   "Services": "Services",
   "Working process": "Working process",
   "Our clients": "Our clients",
   "News": "News",
+  "Region": "Region",
+  "Phone number": "Phone number",
+  "FullName": "FullName",
+  "Email": "Email",
   "Leave a request": "Leave a request",
   "Search": "Search",
   "Learn More": "Learn More",
   "Links": "Links",
-  "Read more": "Read More",
-  "Recent News": "Recent News",
-  "FirstName": "First Name",
-  "LastName": "Last Name",
-  "Email": "Email",
-  "PhoneNumber": "Phone Number",
-  "InsuranceType": "Insurance Type",
-  "BalanceLimit": "Limite Of Balance",
-  "GetAQuote": "Get A Quote"
+  "Read more": "Read More"
 }

@@ -2293,7 +2293,7 @@ pre {
 .slider.style_three .slider_content h1 {
   line-height: 140px;
   font-weight: 700;
-  font-size: 100px;
+  font-size: 120px;
   color: var(--color-white);
   margin-bottom: 35px;
 }
@@ -4440,7 +4440,7 @@ body .service_post.style_one .owl-carousel .owl-dots {
   max-width: 250px;
 }
 .image_box_only.type_seven.color_two .fun_facts.type_two {
-  background: var(--color-set-two-three-6);
+  background: var(--color-set-one-1);
 }
 .image_box_only.type_seven.color_two .icon_box_only.type_four .title_18 a {
   color: var(--heading-color-two);
@@ -6515,7 +6515,7 @@ body .service_post.style_one .owl-carousel .owl-dots {
   position: absolute;
   text-align: center;
   top: -25px;
-  right: 0px;
+  right: -40px;
 }
 .image_video_box_only.type_two .image .video_box a {
   position: relative;

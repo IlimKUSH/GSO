@@ -1,21 +1,18 @@
 {
+  "Home": "Башкы бет",
   "About us": "Биз жөнүндө",
   "Offers": "Сунуштар",
   "Services": "Кызматтар",
   "Working process": "Иш процесси",
   "Our clients": "Биздин кардарлар",
   "News": "Жаңылыктар",
+  "FullName": "Толук аты",
+  "Region": "Аймак",
+  "Phone number": "Телефон номуру",
+  "Email": "Электрондук почта",
   "Leave a request": "Өтүнмөңүздү тапшырыңыз",
   "Search": "Издөө",
   "Learn More": "Кененирээк маалымат",
   "Links": "Шилтемелер",
-  "Read more": "Кененирээк окуу",
-  "Recent News": "Акыркы жаңылыктар",
-  "FirstName": "Аты",
-  "LastName": "Фамилия",
-  "Email": "Email",
-  "PhoneNumber": "Телефон номуру",
-  "InsuranceType": "Камсыздандыруунун түрү",
-  "BalanceLimit": "Баланс чеги",
-  "GetAQuote": "Баасын билип алыңыз"
+  "Read more": "Кененирээк окуу"
 }

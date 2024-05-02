@@ -40,7 +40,7 @@ export default function Cta1() {
                         </div>
                         <div className="col-lg-2">
                             <div className="theme_btn_all text-md-center">
-                                <Link href="#" className="theme_btn big color_white_two rotate">
+                                <Link href="#request" className="theme_btn big color_white_two rotate">
                                     {t("Leave a request")} <span> <i className="fi-rr-arrow-small-up" /></span>
                                 </Link>
                             </div>

@@ -17,12 +17,6 @@ export default function MobileMenu({ data, handleMobileMenu, isMobileMenu }) {
                         <div className="button theme_btn">
                             <LocaleSwitcher/>
                         </div>
-                        <form role="search" method="get" action="#">
-                            <input type="search" className="search" placeholder={t("Search")} name="s" title="Search"/>
-                            <button type="submit" className="sch_btn">
-                                <i className="fa fa-search"/>
-                            </button>
-                        </form>
                         <div className="menu-outer">
                             <div className="navigation_menu">
                                 <Sidebar/>

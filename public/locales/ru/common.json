@@ -1,21 +1,18 @@
 {
+  "Home": "Главная",
   "About us": "О нас",
   "Offers": "Предложения",
   "Services": "Услуги",
   "Working process": "Рабочий процесс",
   "Our clients": "Наши клиенты",
   "News": "Новости",
+  "FullName": "ФИО",
+  "Region": "Область",
+  "Phone number": "Номер телефона",
+  "Email": "Электронная почта",
   "Leave a request": "Оставить заявку",
   "Search": "Поиск",
   "Learn More": "Подробнее",
   "Links": "Ссылки",
-  "Read more": "Читать больше",
-  "Recent News": "Последние новости",
-  "FirstName": "Имя",
-  "LastName": "Фамилия",
-  "Email": "Email",
-  "PhoneNumber": "Номер телефона",
-  "InsuranceType": "Тип страховки",
-  "BalanceLimit": "Лимит баланса",
-  "GetAQuote": "Узнать цену"
+  "Read more": "Читать больше"
 }

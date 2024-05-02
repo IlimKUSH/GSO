@@ -1,6 +1,31 @@
 import Link from "next/link"
 import useAxios from "@/hooks/useAxios";
 import {useLocale} from "next-intl";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Autoplay, Navigation, Pagination} from "swiper";
+
+const swiperOptions = {
+    modules: [Autoplay, Pagination, Navigation],
+    slidesPerView: 1,
+    spaceBetween: 0,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    loop: true,
+
+    // Navigation
+    navigation: {
+        nextEl: '.owl-next',
+        prevEl: '.owl-prev',
+    },
+
+    // Pagination
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+}
 
 export default function Service5() {
     const locale = useLocale()
@@ -13,6 +38,19 @@ export default function Service5() {
         }
     })
     const data = response?.results[0]
+
+    const chunkArray = (array, size) => {
+        return array?.reduce((chunks, el, i) => {
+            if (i % size === 0) {
+                chunks.push([el]);
+            } else {
+                chunks[chunks.length - 1].push(el);
+            }
+            return chunks;
+        }, []);
+    };
+
+    const serviceChunks = chunkArray(data?.service_list, 6);
 
     return (
         <>
@@ -38,47 +76,56 @@ export default function Service5() {
                     <div className="pd_bottom_40" />
                     {/*-============spacing==========-*/}
                     <section className="service_post position-relative">
-                        <div className="row">
-                            {data?.service_list?.map((serviceItem) => (
-                                <div key={serviceItem.id} className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                                    <div className="service_box type_four color_two hover_1_get hover_1">
-                                        <div className="oh ho_1"/>
-                                        <div className="oh ho_2"/>
-                                        <div className="oh ho_3"/>
-                                        <div className="oh ho_4"/>
-                                        <div className="content_box trans">
-                                            <div className="top">
-                                                <div className="icon trans">
-                                                    <i className=" flaticon-insurance-2 trans"/></div>
-                                                <div className="steps trans">1</div>
-                                                <h4 className="title_24 trans">
-                                                    <Link href="/service">
-                                                        {serviceItem?.["title_" + locale]}
-                                                    </Link>
-                                                </h4>
+                        <Swiper {...swiperOptions} className="owl_nav_block owl_dots_none theme_carousel">
+                            {serviceChunks?.map((chunk, idx) => (
+                                <SwiperSlide key={idx} className="slide-item-content">
+                                    <div className="row">
+                                        {chunk?.map((serviceItem) => (
+                                            <div key={serviceItem.id} className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                                                <div className="service_box type_four color_two hover_1_get hover_1">
+                                                    <div className="oh ho_1"/>
+                                                    <div className="oh ho_2"/>
+                                                    <div className="oh ho_3"/>
+                                                    <div className="oh ho_4"/>
+                                                    <div className="content_box trans">
+                                                        <div className="top">
+                                                            <div className="icon trans">
+                                                                <i className=" flaticon-insurance-2 trans"/></div>
+                                                            <div className="steps trans">{serviceItem.id}</div>
+                                                            <h4 className="title_24 trans">
+                                                                <Link href="/service">
+                                                                    {serviceItem?.["title_" + locale]}
+                                                                </Link>
+                                                            </h4>
+                                                        </div>
+                                                        <div className="line_box">
+                                                            <div className="line"/>
+                                                        </div>
+                                                        <div className="bottom">
+                                                            <p className="trans">
+                                                                {serviceItem?.["description_" + locale]}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="line_box">
-                                                <div className="line"/>
-                                            </div>
-                                            <div className="bottom">
-                                                <p className="trans">
-                                                    {serviceItem?.["description_" + locale]}
-                                                </p>
-                                                <Link href="/service" className="rd_more">
-                                                    <img
-                                                        src={serviceItem.icon}
-                                                        alt="service"/>
-                                                </Link>
-                                            </div>
-                                        </div>
+                                        ))}
                                     </div>
-                                </div>
+                                </SwiperSlide>
                             ))}
-                        </div>
+                            <div className="owl-nav">
+                                <button type="button" role="presentation" className="owl-prev">
+                                    <i className="fi-rs-arrow-small-left"/>
+                                </button>
+                                <button type="button" role="presentation" className="owl-next">
+                                    <i className="fi-rs-arrow-small-right"/>
+                                </button>
+                            </div>
+                        </Swiper>
                     </section>
                 </div>
                 {/*-============spacing==========-*/}
-                <div className="pd_bottom_80" />
+                <div className="pd_bottom_80"/>
                 {/*-============spacing==========-*/}
             </section>
 

@@ -1,5 +1,3 @@
-import Preloader from "@/components/elements/Preloader"
-import { useEffect, useState } from "react"
 import 'swiper/css'
 import "swiper/css/navigation"
 import "swiper/css/pagination"
@@ -36,3 +34,13 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp
+
+export async function getStaticProps(context) {
+    return {
+        props: {
+            messages: {
+                ...(await import(`public/locales/${context.locale}/common.json`)).default,
+            },
+        },
+    };
+}

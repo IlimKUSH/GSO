@@ -20,51 +20,67 @@ export default function Blog7() {
     return (
         <>
             <section className="container">
-                <div className="call_to_action style_two bg_op_1 position-relative z_99 mr_bottom_minus_200"
+                <div className="call_to_action style_two bg_op_1 mr_bottom_70"
                      // style={{ backgroundImage: 'url(assets/images/footer/footer-3-bg.jpg)' }}
                 >
-                    <div className="row align-items-center">
+                    <div className="row">
                         <div className="col-lg-6">
-                            <div className="section_title type_one">
-                                <h4 className="sm_title color_white"> Latest News &amp; Blog</h4>
-                                <div className="title_whole">
-                                    <h2 className="title color_white"> Find an Insurance
-                                        Agent or Start Tracking
-                                        your Claims</h2>
-                                </div>
-                            </div>
-                            {/*-============spacing==========-*/}
-                            <div className="pd_bottom_35" />
-                            {/*-============spacing==========-*/}
-                            <div className="row">
-                                <div className="col-lg-6">
-                                    <div className="theme_btn_all">
-                                        <Link href="#" className="theme_btn">
-                                            Track Your Claim <span> <i className=" fi-rr-arrow-small-up" /></span>
-                                        </Link>
-                                    </div>
-                                </div>
-                                <div className="col-lg-6">
-                                    <div className="d-flex align-items-center contact_header_one">
-                                        <div className="icon_s">
-                                            <i className=" fi-rr-headphones" /></div>
-                                        <div className="content">
-                                            <h6 className="tite color_white">Need Help?</h6>
-                                            <div className="title_20"><Link href="tel:+000(123)45688" className="color_white">+000(123)456 88</Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div>
+                                <h6>1. ОАО «Государственная страховая организация» <br/>
+                                    Кол центр:
+                                    0(312) 54-54-00,
+                                    0(553) 54-54-00,
+                                    0(777) 54-54-00,
+                                    0(707) 54-54-00 <br/>
+
+                                    Email: info@gso.kg <br/>
+                                    Головной офис: г. Бишкек, пр. Ч. Айтматова 1, строение 2, 4 этаж
+                                </h6>
+                                <h6>2. Чуй-Бишкекский филиал ОАО «ГСО» <br/>
+                                    0(312) 54-43-20
+                                    0(312) 54-43-22 <br/>
+
+                                    Email: bishkek@gso.kg <br/>
+                                    г. Бишкек, пр. Ч. Айтматова 1, строение 2, 4 этаж, каб. 425
+                                </h6>
+                                <h6>3. Ошский филиал ОАО «ГСО» <br/>
+                                    0(3222) 5-52-31 <br/>
+                                    Email: osh@gso.kg < br/>
+                                    г. Ош ул.Ленина 221, каб.26,27
+                                </h6>
+                                <h6>4. Иссык-Кульский филиал ОАО «ГСО» <br/>
+                                    0(3922) 5-49-10 <br/>
+                                    Email: ik@gso.kg <br/>
+
+                                    г. Каракол ул.Гебзе 124
+                                </h6>
                             </div>
                         </div>
                         <div className="col-lg-6">
-                            <div className="image_video_box_only type_one color_two">
-                                <div className="image one height_340px">
-                                    <img src="/assets/images/sub-1-min.png" alt="img" className="img-fluid height_340px" />
-                                    <div className="video_box video-inner text-center">
-                                        <VideoBox />
-                                    </div>
-                                </div>
+                            <div>
+                                <h6>5. Таласский филиал ОАО «ГСО» <br/>
+                                    0(3422) 5-20-60 <br/>
+                                    Email: talas@gso.kg <br/>
+                                    г. Талас ул. Бердике-Баатыра 295 А
+                                </h6>
+                                <h6>6. Джалал-Абадский филиал ОАО «ГСО» <br/>
+                                    0(3722) 2-41-01
+                                    0(3722) 2-41-12 <br/>
+                                    Email: ja@gso.kg <br/>
+                                    г. Джалал-Абад ул. Ж.Бакиева 16г.
+                                </h6>
+                                <h6>7. Нарынский филиал ОАО «ГСО» <br/>
+                                    0(3522) 5-71-01 <br/>
+                                    Email: naryn@gso.kg <br/>
+                                    г. Нарын ул.Ленина 76
+                                </h6>
+                                <h6>8. Баткенский филиал ОАО «ГСО» <br/>
+                                    + 996 551 766 262
+                                    + 996 777 769 051 <br/>
+                                    Email: batken@gso.kg <br/>
+                                    г.Баткен ул.Нургазыева 10
+
+                                </h6>
                             </div>
                         </div>
                     </div>

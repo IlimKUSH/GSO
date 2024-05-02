@@ -26,6 +26,13 @@ export default function Sidebar() {
         <>
             <ul className="navbar_nav getmobilemenu">
                 <li className="menu-item nav-item menu-item-has-children dropdown mennucolumn_full-six">
+                    <Link href="#" className="nav_link">
+                        <span className="text-link">
+                            {t("Home")}
+                        </span>
+                    </Link>
+                </li>
+                <li className="menu-item nav-item menu-item-has-children dropdown mennucolumn_full-six">
                     <Link href="#about" className="nav_link">
                         <span className="text-link">
                             {t("About us")}
