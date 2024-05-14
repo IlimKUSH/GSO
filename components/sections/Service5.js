@@ -93,7 +93,7 @@ export default function Service5() {
                                                                 <i className=" flaticon-insurance-2 trans"/></div>
                                                             <div className="steps trans">{serviceItem.id}</div>
                                                             <h4 className="title_24 trans">
-                                                                <Link href="/service">
+                                                                <Link href="#services">
                                                                     {serviceItem?.["title_" + locale]}
                                                                 </Link>
                                                             </h4>

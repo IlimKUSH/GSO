@@ -3,6 +3,7 @@ import useAxios from "@/hooks/useAxios";
 import {useLocale, useTranslations} from "next-intl";
 import {Autoplay, Navigation, Pagination} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
+import {truncateText} from "@/hooks/truncateText";
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -95,12 +96,12 @@ export default function Blog3() {
                                                 </span>
                                                             </div>
                                                             <h4 className="title_22">
-                                                                <Link href="/blog">
+                                                                <Link href={`/blog/${client.id}`}>
                                                                     {client?.["title_" + locale]}
                                                                 </Link>
                                                             </h4>
                                                             <p className="descs">
-                                                                {client?.["content_" + locale]}
+                                                                {truncateText(client?.["content_" + locale], 50)}
                                                             </p>
                                                             <div className="bottm_contet d-flex align-items-center">
                                                                 <div className="d-flex authour align-items-center">

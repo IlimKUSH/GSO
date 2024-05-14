@@ -2,8 +2,11 @@ import Link from "next/link"
 import NavbarNav from "./NavbarNav"
 import useAxios from "@/hooks/useAxios";
 import LocaleSwitcher from "@/components/elements/LocaleSwitcher";
+import {useLocale} from "next-intl";
 
-export default function StickyHeader({ data, handleMobileMenu }) {
+export default function StickyHeader({ handleMobileMenu }) {
+
+    const locale = useLocale()
 
     return (
         <>
@@ -15,7 +18,8 @@ export default function StickyHeader({ data, handleMobileMenu }) {
                                 <div className="col-xl-2 col-lg-12 col-md-5 col-sm-5 col-xs-5">
                                     <div className="logobox">
                                         <Link href="/" className="logo navbar-brand">
-                                            <img src={data?.logo} alt="GSO" className="logo_default" />
+                                            <img src={`/assets/images/navbar_logo_${locale}.svg`} alt="GSO"
+                                                 className="logo_default"/>
                                         </Link>
                                     </div>
                                 </div>

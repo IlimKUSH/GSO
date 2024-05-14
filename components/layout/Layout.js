@@ -22,7 +22,7 @@ export default function Layout({ pageCls, breadcrumbTitle, children }) {
 
     return (
         <>
-            <StickyHeader data={response?.results[0]} handleMobileMenu={handleMobileMenu} />
+            <StickyHeader handleMobileMenu={handleMobileMenu} />
 
             <div id="page" className={`page_wapper hfeed site ${pageCls ? pageCls : ""}`}>
 

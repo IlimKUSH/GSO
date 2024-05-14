@@ -19,7 +19,8 @@ export default function Footer3({ data }) {
 
     return (
         <>
-            <footer className="footer style_one style_three bg_op_4" style={{ backgroundImage: 'url(assets/images/Map.png)' }}>
+            <footer className="footer style_one style_three bg_op_4"
+                    style={{backgroundImage: 'url(assets/images/Map.png)' }}>
                 {/*-============spacing==========-*/}
                 <div className="pd_top_90" />
                 {/*-============spacing==========-*/}
@@ -31,15 +32,16 @@ export default function Footer3({ data }) {
                                 <div className="footer_widgets_box pd_bottom_30">
                                     <div className="logo_box">
                                         <Link href="#" className="logo navbar-brand">
-                                            <img src="/assets/images/footer-logo.svg" alt="Vankine" className="logo_default" />
+                                            <img src={`/assets/images/footer/footer_logo_${locale}.svg`} alt="GSO" className="logo_default" />
                                         </Link>
                                     </div>
                                     {/*-============spacing==========-*/}
                                     <div className="pd_bottom_35" />
                                     {/*-============spacing==========-*/}
                                     <div className="position-relative color_white">
-                                        Присоединяйтесь к Государственной Страховой Организации и узнайте, почему мы являемся одной из ведущих страховых компаний в Кыргызстане.
-                                        <br />Наши сотрудники и технологии поддерживают вас на каждом этапе - от доступного страхового покрытия до превосходного обслуживания клиентов.
+                                        {t("footer1")}
+                                        <br />
+                                        {t("footer2")}
                                     </div>
                                     {/*-============spacing==========-*/}
                                     <div className="pd_bottom_25" />
@@ -74,7 +76,7 @@ export default function Footer3({ data }) {
                                                 </Link>
                                                 <div className="content">
                                                     <h4 className="title_18">
-                                                        <Link href="/blog" className="color_white">
+                                                        <Link href={`/blog  /${blog.id}`} className="color_white">
                                                             {blog["title_" + locale]}
                                                         </Link>
                                                     </h4>
