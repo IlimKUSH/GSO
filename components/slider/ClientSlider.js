@@ -59,7 +59,7 @@ export default function ClientSlider() {
             'Content-Type': 'application/json',
             Authorization: process.env.NEXT_PUBLIC_ACCESS_TOKEN
         }
-    })
+    })  
     const data = response?.results[0]
 
     return (

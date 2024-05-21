@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import {useLocale, useTranslations} from "next-intl";
 import useAxios from "@/hooks/useAxios";
 
@@ -6,6 +6,8 @@ import useAxios from "@/hooks/useAxios";
 export default function Content4() {
     const t = useTranslations()
     const locale = useLocale()
+
+    const [submissionStatus, setSubmissionStatus] = useState(null);
 
     const [formData, setFormData] = useState({
         name: '',
@@ -47,22 +49,36 @@ export default function Content4() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await update({
-            method: "post",
-            url: "/api/insurances/",
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: process.env.NEXT_PUBLIC_ACCESS_TOKEN
-            },
-            data: formData
-        });
-        setFormData({
-            name: '',
-            email: '',
-            phone_number: "",
-            region: "",
-        })
-    }
+        try {
+            await update({
+                method: "post",
+                url: "/api/insurances/",
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: process.env.NEXT_PUBLIC_ACCESS_TOKEN
+                },
+                data: formData
+            });
+            setSubmissionStatus('success');
+            setFormData({
+                name: '',
+                email: '',
+                phone_number: "",
+                region: ""
+            });
+        } catch (error) {
+            setSubmissionStatus('error');
+        }
+    };
+
+    useEffect(() => {
+        if (submissionStatus) {
+            const timer = setTimeout(() => {
+                setSubmissionStatus(null);
+            }, 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [submissionStatus]);
 
     return (
         <>
@@ -91,7 +107,7 @@ export default function Content4() {
                                                 <div className="row">
                                                     <div className="col-lg-6">
                                                         <label>{t("FullName")} <span>*</span></label>
-                                                        <input type="text" name="first_name" placeholder="Larry"
+                                                        <input type="text" name="name" placeholder="Larry"
                                                                required
                                                                value={formData.name}
                                                                onChange={handleInputChange}/>
@@ -108,7 +124,7 @@ export default function Content4() {
                                                     </div>
                                                     <div className="col-lg-6">
                                                         <label>{t("Region")}</label>
-                                                        <select value={formData.region} onChange={handleInputChange}>
+                                                        <select name="region" value={formData.region} onChange={handleInputChange}>
                                                             {region?.map((type) => (
                                                                 <option value={type.id} key={type.id}>{type.name}</option>
                                                             ))}
@@ -122,6 +138,8 @@ export default function Content4() {
                                                     </div>
                                                 </div>
                                             </form>
+                                            {submissionStatus === 'success' && <p>{t("Success")}</p>}
+                                            {submissionStatus === 'error' && <p>{t("Error")}</p>}
                                         </div>
                                     </div>
                                 </div>

@@ -13,18 +13,6 @@ const swiperOptions = {
         disableOnInteraction: false,
     },
     loop: true,
-
-    // // Navigation
-    // navigation: {
-    //     nextEl: '.h1n',
-    //     prevEl: '.h1p',
-    // },
-
-    // // Pagination
-    // pagination: {
-    //     el: '.swiper-pagination',
-    //     clickable: true,
-    // },
 }
 
 export default function Testimonial2() {

@@ -1,7 +1,5 @@
 import dynamic from 'next/dynamic'
-
 import Link from 'next/link'
-import VideoBox from "../elements/VideoBox"
 import {useLocale, useTranslations} from "next-intl";
 import useAxios from "@/hooks/useAxios";
 import {Fragment} from "react";

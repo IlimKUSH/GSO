@@ -20,8 +20,6 @@ export default function SearchPopup({ isSearch, handleSearch, handleOptionalPane
                     </div>
                 </div>
             </div>
-
-
         </>
     )
 }

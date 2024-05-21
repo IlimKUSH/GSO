@@ -1,6 +1,5 @@
 import Link from "next/link"
 import NavbarNav from "./NavbarNav"
-import useAxios from "@/hooks/useAxios";
 import LocaleSwitcher from "@/components/elements/LocaleSwitcher";
 import {useLocale} from "next-intl";
 

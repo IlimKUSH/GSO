@@ -11,7 +11,6 @@ export default function PortfolioStyle2() {
         setTimeout(() => {
             isotope.current = new Isotope(".portfoliocontainer", {
                 itemSelector: ".portfolio-wrapper",
-                // layoutMode: "fitRows",
                 percentPosition: true,
                 masonry: {
                     columnWidth: ".portfolio-wrapper",

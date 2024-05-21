@@ -11,7 +11,6 @@ export default function PortfolioFilter1() {
         setTimeout(() => {
             isotope.current = new Isotope(".portfoliocontainer", {
                 itemSelector: ".portfolio-wrapper",
-                // layoutMode: "fitRows",
                 percentPosition: true,
                 masonry: {
                     columnWidth: ".portfolio-wrapper",
