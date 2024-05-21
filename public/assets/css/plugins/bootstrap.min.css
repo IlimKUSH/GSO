@@ -581,6 +581,21 @@ progress {
     max-width: 1320px;
   }
 }
+.not-style {
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 2px solid;
+  transition: opacity 0.3s ease;
+}
+.success {
+  border-color: green;
+  color: green;
+}
+.error {
+  border-color: red;
+  color: red;
+}
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
