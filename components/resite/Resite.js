@@ -3,7 +3,7 @@ import React from 'react'
 export default function Resite() {
 
   return (
-    <div className='resite'>
+    <div className='resite pd_60'>
         <div className='resite_logo'><img src={`/assets/images/navbar_logo_ru.svg`} width={400} alt='logo'/></div>
         <div className='resite_text'>
             <h1 className='resite_h1'>ГРЯДЕТ НОВЫЙ СТАРТ</h1>

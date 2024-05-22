@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout"
+import Resite from "@/components/resite/Resite"
 import About3 from "@/components/sections/About3"
 import Blog3 from "@/components/sections/Blog3"
 import Blog7 from "@/components/sections/Blog7"

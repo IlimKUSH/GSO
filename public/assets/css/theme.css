@@ -146,7 +146,9 @@
 .op_5 {
   opacity: 0.5;
 }
-
+.pd_10{ 
+  padding: 10px;
+}
 .pd_40 {
   padding: 40px;
 }
