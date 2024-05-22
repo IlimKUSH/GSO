@@ -1,0 +1,34 @@
+.resite {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../images/__resite_bg.png);
+    background-size: cover;
+    height: 100vh;
+    max-height: 100%;
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    .resite_text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 700px;
+        gap: 20px;
+        max-width: 100vw;
+        .resite_h1 {
+            color: #ffffff;
+            text-align: center;
+        }
+        .resite_line {
+            border: 2px solid #ffffff;
+            width: 700px;
+        }
+        .resite_span {
+            color: #ffffff;
+            text-align: center;
+        }
+    }
+  }

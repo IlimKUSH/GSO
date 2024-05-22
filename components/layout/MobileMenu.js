@@ -5,6 +5,10 @@ import LocaleSwitcher from "@/components/elements/LocaleSwitcher";
 export default function MobileMenu({ data, handleMobileMenu, isMobileMenu }) {
     const t = useTranslations()
 
+    const handleLinkClick = () => {
+        handleMobileMenu();
+    }
+
     return (
         <>
             <div className={isMobileMenu ? "mobile_menu_box-visible" : ""}>
@@ -19,7 +23,7 @@ export default function MobileMenu({ data, handleMobileMenu, isMobileMenu }) {
                         </div>
                         <div className="menu-outer">
                             <div className="navigation_menu">
-                                <Sidebar/>
+                                <Sidebar handleLinkClick={handleLinkClick}/>
                             </div>
                         </div>
                         <div className="mobile-header-info-wrap">

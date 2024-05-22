@@ -11,6 +11,7 @@ import "../public/assets/css/plugins/slick.css"
 
 import "../public/assets/css/global-settings.css"
 import "../public/assets/css/theme.css"
+import "../public/assets/css/css/resite.css"
 
 import "../public/assets/css/plugins/flaticon_vankine.css"
 import "../public/assets/css/plugins/font-awesome.min.css"

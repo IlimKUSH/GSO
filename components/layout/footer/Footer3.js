@@ -106,7 +106,7 @@ export default function Footer3({ data }) {
                                                     <img src="/assets/images/shield.svg" className="img-fluid" alt="img" />
                                                 </div>
                                                 <Link className="links color_white" href="#">
-                                                    Copyright {new Date().getFullYear()}. All Rights Reserved
+                                                {t("footer3")} {new Date().getFullYear()}. {t("footer4")}
                                                 </Link>
                                             </div>
                                         </li>

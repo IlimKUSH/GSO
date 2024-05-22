@@ -8,8 +8,8 @@ import useAxios from "@/hooks/useAxios";
 
 export default function Layout({ pageCls, breadcrumbTitle, children }) {
     // Moblile Menu
-    const [isMobileMenu, setMobileMenu] = useState(false)
-    const handleMobileMenu = () => setMobileMenu(!isMobileMenu)
+    const [isMobileMenu, setIsMobileMenu] = useState(false)
+    const handleMobileMenu = () => setIsMobileMenu(!isMobileMenu)
 
     const {response, loading, update} = useAxios({
         method: "get",
