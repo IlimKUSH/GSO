@@ -8,12 +8,12 @@ import Process2 from "@/components/sections/Process2";
 import Content4 from "@/components/sections/Content4";
 import Client2 from "@/components/sections/Client2";
 import Testimonial2 from "@/components/sections/Testimonial2";
-import Blog3 from "@/components/sections/Blog3";
 import Blog7 from "@/components/sections/Blog7";
 import { useState } from "react";
 import Resite from "@/components/resite/Resite";
+
 export default function Home1() {
-  const [view, setView] = useState(false);
+  const [view, setView] = useState(true);
 
   return (
     <>
@@ -29,7 +29,6 @@ export default function Home1() {
           <Client2 />
           <div className="divider" />
           <Testimonial2 />
-          <Blog3 />
           <Blog7 />
         </Layout>
       ) : (
