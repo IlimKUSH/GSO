@@ -15,8 +15,6 @@ import Resite from "@/components/resite/Resite";
 export default function Home1() {
   const [view, setView] = useState(true);
 
-  
-
   return (
     <>
       {view ? (
